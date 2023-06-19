@@ -18,13 +18,13 @@ sudo apt install terminator
 ```note
 Create more terminals by:
 
-horizontal split: ```bash Ctrl-Shift-o ```
-vertical split: Ctrl-Shift-e
+- horizontal split: ```Ctrl-Shift-o```
+- vertical split: ```Ctrl-Shift-e```
 Shift focus to:
 
-next terminal: Ctrl-Shift-n
-previous terminal: Ctrl-Shift-p
-New tab: Ctrl-Shift-t
+- next terminal: ```Ctrl-Shift-n```
+- previous terminal: ```Ctrl-Shift-p```
+New tab: ```Ctrl-Shift-t```
 
 New window: Ctrl-Shift-i
 
