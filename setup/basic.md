@@ -6,6 +6,15 @@ sort: 1
 
 These instructions will set up the user PC and robot for basic communication. Further setup will depend on the chosen [networking](./networking.md) configuration.
 
+## Terminator Terminal Emulator (Optional)
+
+### Terminator Install
+
+```bash
+sudo apt install terminator
+```
+
+
 ## User PC
 
 ### Installing ROS 2
