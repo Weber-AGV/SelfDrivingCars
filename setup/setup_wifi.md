@@ -11,7 +11,7 @@ If you are moving your TurtleBot 4 to a new location with a different Wi-Fi netw
 reconfigure the Raspberry Pi to connect to that network beforehand or place it into AP mode. 
 Otherwise it will continue trying to connect to your current network.
 ```
-Before leaving campus, SSH into the Raspberry Pi and run the [TurtleBot 4 setup tool](../software/turtlebot4_setup.md#configuration-tools):
+<!-- Before leaving campus, SSH into the Raspberry Pi and run the [TurtleBot 4 setup tool](../software/turtlebot4_setup.md#configuration-tools):
 
 ```bash
 turtlebot4-setup
@@ -78,4 +78,4 @@ Once the Wi-Fi settings are applied, the Raspberry Pi will reboot and connect to
 <figure class="aligncenter">
     <img src="media/display_ip2.jpg" alt="IP Address" style="transform:rotate(270deg); width: 20%"/>
     <figcaption>Wi-Fi IP address on a TurtleBot 4</figcaption>
-</figure>
+</figure> -->
