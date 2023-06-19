@@ -57,21 +57,6 @@ man terminator_config
 
 To interface with the robot, it is recommended to use a remote PC running the appropriate version of Ubuntu Desktop, with ROS 2 installed.
 
-{% tabs installation %}
-{% tab installation galactic %}
-
-Required OS: [Ubuntu 20.04](https://releases.ubuntu.com/20.04/)
-
-Follow [these instructions](https://docs.ros.org/en/galactic/Installation/Ubuntu-Install-Debians.html) to install ROS 2 Galactic on your PC.
-
-Once ROS 2 is installed, install `turtlebot4_desktop`:
-
-```bash
-sudo apt update && sudo apt install ros-galactic-turtlebot4-desktop
-```
-
-{% endtab %}
-{% tab installation humble %}
 
 Required OS: [Ubuntu 22.04](https://releases.ubuntu.com/22.04/)
 
@@ -82,9 +67,6 @@ Once ROS 2 is installed, install `turtlebot4_desktop`:
 ```bash
 sudo apt update && sudo apt install ros-humble-turtlebot4-desktop
 ```
-
-{% endtab %}
-{% endtabs %}
 
 ## Robot
 
@@ -122,22 +104,6 @@ Once logged in, configure the Raspberry Pi to connect to your Wi-Fi network.
 Connect the Raspberry Pi to a 5GHz Wi-Fi network for optimal performance.
 ```
 
-{% tabs wifi %}
-{% tab wifi galactic %}
-
-In your SSH session, call:
-
-```bash
-sudo wifi.sh -s '<WIFI_SSID>' -p '<WIFI_PASSWORD>' -r <REGULATORY_DOMAIN> && sudo reboot
-```
-
-```note
-The Regulatory Domain is based on the country you live in. USA: `US`, Canada: `CA`, UK: `GB`, Germany: `DE`, Japan: `JP3`, Spain: `ES`. For a full list, click [here](https://www.arubanetworks.com/techdocs/InstantWenger_Mobile/Advanced/Content/Instant%20User%20Guide%20-%20volumes/Country_Codes_List.htm#regulatory_domain_3737302751_1017918).
-```
-
-{% endtab %}
-{% tab wifi humble %}
-
 In your SSH session, run the [TurtleBot 4 setup tool](../software/turtlebot4_setup.md#configuration-tools):
 
 ```bash
@@ -155,9 +121,6 @@ This will start the TurtleBot 4 setup tool. Navigate to the "Wi-Fi Setup" menu a
 Change your Wi-Fi mode to 'Client' when connecting to an existing network.
 ```
 
-{% endtab %}
-{% endtabs %}
-
 ### Find the new Raspberry Pi IP
 
 Once the Wi-Fi settings are applied, the Raspberry Pi will reboot and connect to your network. DHCP will assign it a new IP address. On the TurtleBot 4, this IP address will be shown at the top of the display. 
@@ -167,9 +130,6 @@ Once the Wi-Fi settings are applied, the Raspberry Pi will reboot and connect to
     <figcaption>Wi-Fi IP address on a TurtleBot 4</figcaption>
 </figure>
 
-{% endtab %}
-{% tab ip humble %}
-
 On your PC, run the following commands:
 
 ```bash
@@ -178,9 +138,6 @@ export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
 export ROS_DOMAIN_ID=0
 ros2 topic echo /ip
 ```
-
-{% endtab %}
-{% endtabs %}
 
 You should see the IP address printed out in your terminal periodically.
 
@@ -275,26 +232,6 @@ sudo bluetoothctl
 
 Placing the Raspberry Pi into Access Point mode can be useful when using the robot in an area without Wi-Fi connection.
 
-{% tabs ap %}
-{% tab ap galactic %}
-
-SSH into the Raspberry Pi and call:
-
-```bash
-sudo wifi.sh -a && sudo reboot
-```
-
-The Raspberry Pi will revert back to the original AP mode.
-
-Optionally you can set your own SSID and password with:
-
-```bash
-sudo wifi.sh -s '<SSID>' -p '<PASSWORD>' -a && sudo reboot
-```
-
-{% endtab %}
-{% tab ap humble %}
-
 SSH into the Raspberry Pi and run the [TurtleBot 4 setup tool](../software/turtlebot4_setup.md#configuration-tools):
 
 ```bash
@@ -302,9 +239,6 @@ turtlebot4-setup
 ```
 
 Go to <b>Wi-Fi Setup</b> and select <b>Apply Defaults</b>. Optionally you can set your own SSID and password before saving and applying the new settings.
-
-{% endtab %}
-{% endtabs %}
 
 ```tip
 If you are moving your TurtleBot 4 to a new location with a different Wi-Fi network, 
