@@ -167,20 +167,6 @@ Once the Wi-Fi settings are applied, the Raspberry Pi will reboot and connect to
     <figcaption>Wi-Fi IP address on a TurtleBot 4</figcaption>
 </figure>
 
-For the TurtleBot 4 Lite, you will need to check the `/ip` topic for the new address.
-
-{% tabs ip %}
-{% tab ip galactic %}
-
-On your PC, run the following commands:
-
-```bash
-source /opt/ros/galactic/setup.bash
-export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-export ROS_DOMAIN_ID=0
-ros2 topic echo /ip
-```
-
 {% endtab %}
 {% tab ip humble %}
 
