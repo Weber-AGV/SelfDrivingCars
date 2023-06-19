@@ -14,6 +14,42 @@ These instructions will set up the user PC and robot for basic communication. Fu
 sudo apt install terminator
 ```
 
+### Shortcuts
+```note
+Create more terminals by:
+
+horizontal split: ```bash Ctrl-Shift-o ```
+vertical split: Ctrl-Shift-e
+Shift focus to:
+
+next terminal: Ctrl-Shift-n
+previous terminal: Ctrl-Shift-p
+New tab: Ctrl-Shift-t
+
+New window: Ctrl-Shift-i
+
+Close terminal or tab:
+
+Ctrl-Shift-w
+or right mouse click -> Close
+Close window with all it's terminals and tabs: Ctrl-Shift-q
+
+Reset zoom: Ctrl-0
+
+Terminator Preferences menu:
+
+right mouse click -> Preferences
+These and more modifiable shortcuts in:
+
+right mouse click -> Preferences -> Keybindings tab
+Web Documentation:
+
+press F1 or at https://gnome-terminator.readthedocs.io/en/latest/
+More info about shortcuts and cli config in man pages:
+
+man terminator
+man terminator_config
+```
 
 ## User PC
 
