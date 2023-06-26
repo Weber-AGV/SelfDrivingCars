@@ -16,6 +16,14 @@ Here are some common terminal commands for Linux systems.
 - `cd [dir]`: Change the current directory to the directory specified. For example, `cd /home/user` would change the current directory to `/home/user`.
 - `pwd`: Print the path of the current working directory.
 
+## System Administaions Commands
+
+- `sudo`: `sudo [command]`: The `sudo` command stands for "Super User DO", and it is used to perform tasks that require administrative or root permissions. It is used in front of other commands to execute them with superuser privileges.
+
+ - `sudo apt update`: This command updates the list of available packages and their versions, but it does not install or upgrade any packages. Apt (Advanced Package Tool) is a command-line package manager and requires superuser permissions for many operations.
+
+- `sudo apt upgrade`: This command actually installs newer versions of the packages you have. After updating the lists, the package manager knows about available updates for the software you have installed.
+
 ## File and Directory Operations
 
 - `cp [source] [destination]`: Copy a file or directory from the source to the destination.
@@ -62,7 +70,79 @@ Here are some common terminal commands for Linux systems.
 Please note that you should replace `[...]` with your specific arguments.
 
 
-## chmod - details - File Permissions using chmod
+## ls
+
+## Navigation Commands
+
+- `ls`: Lists files and directories in the current directory. The `ls` command has many options that can help you format the output, display additional details, and more. Here are some common options:
+
+    - `ls -l`: Long listing. Instead of just the filenames, display a detailed directory listing that includes the file permissions, number of links, owner, group, size, and time of the last modification.
+
+    - `ls -a`: Show all files and directories, including hidden ones. In Linux, files and directories that start with a dot (`.`) are hidden.
+
+    - `ls -h`: Human-readable sizes. Display file size in a more human-readable format (e.g., KB, MB) in the long listing view.
+
+    - `ls -t`: Sort by modification time. The newest files will be displayed first.
+
+    - `ls -r`: Reverse order. Reverse the order of how files are displayed (useful with -t, for example, to show oldest files first).
+
+    - `ls -R`: Recursive. List the files in subdirectories as well.
+
+    - `ls -S`: Sort by file size.
+
+    - `ls -1`: List one file per line.
+
+For example, if you wanted a long listing of all files, including hidden ones, in human-readable format, you would use `ls -laH`.
+
+These options can be combined in most cases. For example, `ls -lS` would give a long listing sorted by file size. Keep in mind that not all combinations of options make sense together.
+
+As always, you can use `man ls` or `ls --help` to get more information about the `ls` command and its options.
+
+
+## cd
+
+## Navigation Commands
+
+- `cd [dir]`: Change the current directory to the directory specified. This command is used to navigate the directory structure of a file system. The `[dir]` is a placeholder for the directory you want to navigate to. Here are some common usages:
+
+    - `cd /`: Changes the directory to the root directory.
+
+    - `cd ..`: Moves the directory one level up.
+
+    - `cd -`: Changes to the previous directory you were in.
+
+    - `cd ~` or `cd`: Changes the directory to the home directory.
+
+    - `cd /path/to/directory`: Changes the directory to a specific directory path. The path can be relative to the current directory or an absolute path.
+
+If the directory name contains spaces, you should enclose the path in quotes. For example: `cd "Directory Name"` or `cd 'Directory Name'`.
+
+As always, you can use `help cd` to get more information about the `cd` command.
+
+
+## System Administration Commands
+
+- `sudo [command]`: The `sudo` command stands for "Super User DO", and it is used to perform tasks that require administrative or root permissions. It is used in front of other commands to execute them with superuser privileges. Here are some examples:
+
+    - `sudo apt update`: This command updates the list of available packages and their versions, but it does not install or upgrade any packages. Apt (Advanced Package Tool) is a command-line package manager and requires superuser permissions for many operations.
+
+    - `sudo apt upgrade`: This command actually installs newer versions of the packages you have. After updating the lists, the package manager knows about available updates for the software you have installed.
+
+    - `sudo reboot`: This command will reboot the system immediately. Normal users do not have this privilege, so it requires superuser permissions.
+
+    `sudo` can be a dangerous command if misused. It gives you root-level (the highest level) access, so it should be used with caution.
+
+    Also, in some Linux distributions, you might need to configure `sudo` before using it. This is done by adding users to the sudoers file, which is typically located at `/etc/sudoers`. This should be done with caution, and preferably using the `visudo` command which includes some syntax verification.
+
+    In other distributions like Ubuntu, the primary user is already configured with `sudo` access upon system installation.
+
+    As always, you can use `man sudo` or `sudo --help` to get more information about the `sudo` command and its options.
+
+
+
+## chmod 
+
+### File Permissions using chmod
 
 - `chmod [permissions] [file]`: Change the file system permissions of files and directories. 
 
