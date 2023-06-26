@@ -67,8 +67,10 @@ Here are some common terminal commands for Linux systems.
 - `gzip [file]`: Compress a file to a .gz archive.
 - `gunzip [file.gz]`: Decompress a .gz archive.
 
-Please note that you should replace `[...]` with your specific arguments.
+Please note that you should replace `[...]` with your specific arguments
 
+
+# Further Details on common commands
 
 ## ls
 
