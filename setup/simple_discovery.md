@@ -5,8 +5,7 @@ sort: 8
 # Simple Discovery
 
 ```note
-The TurtleBot 4 should be configured for either Simple Discovery or Discovery Server, not both. 
-See [Networking](./networking.md) for details.
+The TurtleBot 4 should be configured for Simple Discovery
 ```
 
 ## Create® 3

@@ -6,6 +6,27 @@ sort: 1
 
 The TurtleBot 4 runs on Ubuntu 20.04 LTS (Focal Fossa) or Ubuntu 22.04 (Jammy Jellyfish) and currently only supports [ROS 2 Galactic](https://docs.ros.org/en/galactic/index.html) or [ROS 2 Humble](https://docs.ros.org/en/humble/index.html) respectively. The TurtleBot 4 software is entirely open source under the Apache 2.0 license, and is available on the [TurtleBot Github](https://github.com/turtlebot).
 
+```note
+The Turtlebot 4 should be running Jammy Jellyfish and ROS 2 Humble
+```
+
+SSH into the Turtlebot 4
+
+Check for Ubuntu version by running the code below
+
+```bash 
+    lsb_release -a
+```
+
+
+Check ROS version by running the code below
+
+```bash
+    cd /opt/ros 
+    ls
+```
+
+
 There are 2 main computers that run software used by TurtleBot 4: the onboard Raspberry Pi 4, the Create® 3 onboard processor. The user can also connect to the robot with their own PC to visualise sensor data, configure the robot, and more. Each computer is required to run the same version of Ubuntu and ROS 2 as the Turtlebot 4. 
 
 <figure class="aligncenter">
