@@ -80,6 +80,12 @@ export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
 export ROS_DOMAIN_ID=0
 ```
 
+<figure class="aligncenter">
+    <img src="media/bashrc_source.gif" alt="source setup" style="width: 100%"/>
+    <figcaption>Adding humble setup.bash to bashrc</figcaption>
+</figure>
+
+
 Run the following code. You should see the IP address printed out in your terminal periodically. Your ip will be unique this is just an example
 
 ```bash
