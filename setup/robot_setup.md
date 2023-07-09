@@ -80,7 +80,7 @@ export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
 export ROS_DOMAIN_ID=0
 ```
 
-Run the following code. You should see the IP address printed out in your terminal periodically.
+Run the following code. You should see the IP address printed out in your terminal periodically. Your ip will be unique this is just an example
 
 ```bash
 $ ros2 topic echo /ip
