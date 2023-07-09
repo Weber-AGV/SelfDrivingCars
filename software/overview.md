@@ -25,6 +25,10 @@ Check ROS version by running the code below
     cd /opt/ros 
     ls
 ```
+<figure class="aligncenter">
+    <img src="media/version_check.gif" alt="version check" style="width: 100%"/>
+    <figcaption>Check the version of Ubuntu and ROS on the TB4</figcaption>
+</figure>
 
 
 There are 2 main computers that run software used by TurtleBot 4: the onboard Raspberry Pi 4, the Create® 3 onboard processor. The user can also connect to the robot with their own PC to visualise sensor data, configure the robot, and more. Each computer is required to run the same version of Ubuntu and ROS 2 as the Turtlebot 4. 
