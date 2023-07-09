@@ -71,13 +71,16 @@ Once the Wi-Fi settings are applied, the Raspberry Pi will reboot and connect to
 On your PC, run the following commands:
 
 ```bash
+code ~/.bashrc
+
+At the bottom of the file paste the following code
+
 source /opt/ros/humble/setup.bash
 export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
 export ROS_DOMAIN_ID=0
-ros2 topic echo /ip
 ```
 
-You should see the IP address printed out in your terminal periodically.
+Run the following code. You should see the IP address printed out in your terminal periodically.
 
 ```bash
 $ ros2 topic echo /ip
