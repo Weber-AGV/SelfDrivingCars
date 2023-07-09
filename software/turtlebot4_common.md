@@ -8,48 +8,6 @@ The [`turtlebot4`](https://github.com/turtlebot/turtlebot4) repository contains 
 
 ## Installation
 
-{% tabs installation %}
-{% tab installation galactic %}
-
-**Debian package**
-
-Individual packages can be installed through apt:
-
-```bash
-sudo apt update
-sudo apt install ros-galactic-turtlebot4-description \
-ros-galactic-turtlebot4-msgs \
-ros-galactic-turtlebot4-navigation \
-ros-galactic-turtlebot4-node
-```
-
-**Source installation**
-
-To manually install this metapackage from source, clone the git repository:
-
-```bash
-cd ~/turtlebot4_ws/src
-git clone https://github.com/turtlebot/turtlebot4.git -b galactic
-```
-
-Install dependencies:
-
-```bash
-cd ~/turtlebot4_ws
-rosdep install --from-path src -yi --rosdistro galactic
-```
-
-Build the packages:
-
-```bash
-source /opt/ros/galactic/setup.bash
-colcon build --symlink-install
-```
-
-{% endtab %}
-
-{% tab installation humble %}
-
 **Debian package**
 
 Individual packages can be installed through apt:
@@ -85,9 +43,6 @@ source /opt/ros/humble/setup.bash
 colcon build --symlink-install
 ```
 
-{% endtab %}
-{% endtabs %}
-
 ```note
 The `turtlebot4` packages are automatically installed when either of `turtlebot4_robot` or `turtlebot4_simulator` is installed.
 ```
@@ -109,35 +64,6 @@ The `turtlebot4_msgs` package contains the custom messages used on the TurtleBot
 ## Navigation
 
 The `turtlebot4_navigation` packages contains launch and configuration files for using SLAM and navigation on the TurtleBot 4. It also contains the TurtleBot 4 Navigator Python node.
-
-{% tabs navigation %}
-
-{% tab navigation galactic %}
-
-Launch files:
-
-* [Nav Bringup](https://github.com/turtlebot/turtlebot4/blob/galactic/turtlebot4_navigation/launch/nav_bringup.launch.py): Launches navigation. Allows for launch configurations to use SLAM, Nav2, and localization.
-* [SLAM Sync](https://github.com/turtlebot/turtlebot4/blob/galactic/turtlebot4_navigation/launch/slam_sync.launch.py): Launches `slam_toolbox` with online synchronous mapping. Recommended for use on a PC.
-* [SLAM Async](https://github.com/turtlebot/turtlebot4/blob/galactic/turtlebot4_navigation/launch/slam_async.launch.py): Launches `slam_toolbox` with online asynchronous mapping. Recommended for use on the Raspberry Pi 4.
-
-Running synchronous SLAM:
-```bash
-ros2 launch turtlebot4_navigation nav_bringup.launch.py slam:=sync
-```
-
-Running asynchronous SLAM with Nav2:
-```bash
-ros2 launch turtlebot4_navigation nav_bringup.launch.py slam:=async
-```
-
-Running Nav2 with localization and existing map:
-```bash
-ros2 launch turtlebot4_navigation nav_bringup.launch.py localization:=true slam:=off map:=/path/to/map.yaml
-```
-
-{% endtab %}
-
-{% tab navigation humble %}
 
 Launch files:
 
@@ -169,9 +95,6 @@ ros2 launch turtlebot4_navigation nav2.launch.py
 Nav2 requires either SLAM or localization to already be running.
 ```
 
-{% endtab %}
-{% endtabs %}
-
 ### TurtleBot 4 Navigator
 
 The [TurtleBot 4 Navigator](https://github.com/turtlebot/turtlebot4/blob/galactic/turtlebot4_navigation/turtlebot4_navigation/turtlebot4_navigator.py) is a Python node that adds TurtleBot 4 specific functionality to the [Nav2 Simple Commander](https://github.com/ros-planning/navigation2/tree/galactic/nav2_simple_commander). It provides a set of Python methods for navigating the TurtleBot 4. This includes docking, navigating to a pose, following waypoints, and more. Visit the [Navigation Tutorials](../tutorials/navigation.html) for examples.
@@ -181,156 +104,6 @@ The [TurtleBot 4 Navigator](https://github.com/turtlebot/turtlebot4/blob/galacti
 The `turtlebot4_node` package contains the source code for the [rclcpp](https://github.com/ros2/rclcpp) node `turtlebot4_node` that controls the robots HMI as well as other logic. This node is used by both the physical robot and the simulated robot.
 
 ### ROS 2 Interfaces
-
-{% tabs turtlebot4_node %}
-{% tab turtlebot4_node galactic %}
-
-**Publishers**
-
-<figure>
-    <table>
-        <thead>
-            <tr>
-                <th>Topic</th>
-                <th>Message Type</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><b>hmi/display</b></td>
-                <td><i>turtlebot4_msgs/msg/UserDisplay</i></td>
-                <td>The current information that is to be displayed (TurtleBot 4 model only)</td>
-            </tr>
-            <tr>
-                <td><b>ip</b></td>
-                <td><i>std_msgs/msg/String</i></td>
-                <td>The IP address of the Wi-Fi interface</td>
-            </tr>
-        </tbody>
-    </table>
-</figure>
-
-**Subscribers**
-
-<figure>
-    <table>
-        <thead>
-            <tr>
-                <th>Topic</th>
-                <th>Message Type</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><b>battery_state</b></td>
-                <td><i>sensor_msgs/msg/BatteryState</i></td>
-                <td>Current battery state of the Create® 3</td>
-            </tr>
-            <tr>
-                <td><b>hmi/buttons</b></td>
-                <td><i>turtlebot4_msgs/msg/UserButton</i></td>
-                <td>Button states of the TurtleBot 4 HMI (TurtleBot 4 model only)</td>
-            </tr>
-            <tr>
-                <td><b>hmi/display/message</b></td>
-                <td><i>std_msgs/msg/String</i></td>
-                <td>User topic to print custom message to display (TurtleBot 4 model only)</td>
-            </tr>
-            <tr>
-                <td><b>hmi/led</b></td>
-                <td><i>turtlebot4_msgs/msg/UserLed</i></td>
-                <td>User topic to control User LED 1 and 2 (TurtleBot 4 model only)</td>
-            </tr>
-            <tr>
-                <td><b>interface_buttons</b></td>
-                <td><i>irobot_create_msgs/msg/InterfaceButtons</i></td>
-                <td>Button states of Create® 3 buttons</td>
-            </tr>
-            <tr>
-                <td><b>joy</b></td>
-                <td><i>sensor_msgs/msg/Joy</i></td>
-                <td>Bluetooth controller button states (TurtleBot 4 model only)</td>
-            </tr>
-            <tr>
-                <td><b>wheel_status</b></td>
-                <td><i>irobot_create_msgs/msg/WheelStatus</i></td>
-                <td>Wheel status reported by Create® 3</td>
-            </tr>
-        </tbody>
-    </table>
-</figure>
-
-**Service Clients**
-
-<figure>
-    <table>
-        <thead>
-            <tr>
-                <th>Service</th>
-                <th>Service Type</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><b>e_stop</b></td>
-                <td><i>irobot_create_msgs/srv/EStop</i></td>
-                <td>Enable or disable motor stop</td>
-            </tr>
-            <tr>
-                <td><b>robot_power</b></td>
-                <td><i>irobot_create_msgs/srv/RobotPower</i></td>
-                <td>Power off the robot</td>
-            </tr>
-            <tr>
-                <td><b>start_motor</b></td>
-                <td><i>std_srvs/srv/Empty</i></td>
-                <td>Start the RPLIDAR motor</td>
-            </tr>
-            <tr>
-                <td><b>stop_motor</b></td>
-                <td><i>std_srvs/srv/Empty</i></td>
-                <td>Stop the RPLIDAR motor</td>
-            </tr>
-        </tbody>
-    </table>
-</figure>
-
-**Action Clients**
-
-<figure>
-    <table>
-        <thead>
-            <tr>
-                <th>Action</th>
-                <th>Action Type</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><b>dock</b></td>
-                <td><i>irobot_create_msgs/action/DockServo</i></td>
-                <td>Command the robot to dock into its charging station</td>
-            </tr>
-            <tr>
-                <td><b>wall_follow</b></td>
-                <td><i>irobot_create_msgs/action/WallFollow</i></td>
-                <td>Command the robot to wall follow on left or right side using bump and IR sensors</td>
-            </tr>
-            <tr>
-                <td><b>undock</b></td>
-                <td><i>irobot_create_msgs/action/Undock</i></td>
-                <td>Command the robot to undock from its charging station</td>
-            </tr>
-        </tbody>
-    </table>
-</figure>
-
-{% endtab %}
-{% tab turtlebot4_node humble %}
 
 **Publishers**
 
@@ -480,9 +253,6 @@ The `turtlebot4_node` package contains the source code for the [rclcpp](https://
         </tbody>
     </table>
 </figure>
-
-{% endtab %}
-{% endtabs %}
 
 ### Functions
 
