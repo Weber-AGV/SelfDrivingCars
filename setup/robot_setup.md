@@ -12,7 +12,7 @@ The first step for setting up the TurtleBot 4 is to power it on and connect it t
 
 ### Power on the robot
 
-Place the TurtleBot 4 onto its dock. The green LED on the dock will turn on for a few seconds, and the TurtleBot 4 should power on. Allow the robot some time to boot up.
+Place the TurtleBot 4 onto its dock. The green LED on the dock will turn on for a few seconds, and the TurtleBot 4 should power on. Allow the robot some time to boot up. You will hear a chime 'happy sound" when the robot has fully booted. All 5 green lights will be illuminated if the robot has been connected to wifi.
 
 For more details on the robot buttons and indicator lights, visit the [Create&reg;3 Documentation](https://iroboteducation.github.io/create3_docs/hw/face/)
 

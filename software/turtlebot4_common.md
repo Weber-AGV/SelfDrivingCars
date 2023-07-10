@@ -10,6 +10,22 @@ The [`turtlebot4`](https://github.com/turtlebot/turtlebot4) repository contains 
 
 **Debian package**
 
+### Check which packages are installed on the User PC and the Raspberry Pi 
+
+User PC
+```bash 
+    apt list --installed | grep ros-humble-turtlebot4
+```
+Raspberry Pi 
+
+SSH into Raspberry Pi 
+
+```bash 
+    apt list --installed | grep ros-humble-turtlebot4
+```
+
+
+
 Individual packages can be installed through apt:
 
 ```bash
