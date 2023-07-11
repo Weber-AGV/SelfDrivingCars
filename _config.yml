@@ -1,8 +1,8 @@
-title: User Manual
+title: Run Docs Template
 lang: en
-description: Turtlebot4 User Manual
-repository: turtlebot/turtlebot4-user-manual
-baseurl: /turtlebot4-user-manual
+description: RunDocsTemplate
+repository: RunDocsTemplate
+baseurl: /RunDocsTemplate
 
 remote_theme: rundocs/jekyll-rtd-theme
 
