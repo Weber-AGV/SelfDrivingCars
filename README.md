@@ -5,7 +5,8 @@
 - Pages
 - Enable Github Actions
 - Go to .github/workflows
-- Enable jeckyll.yml
+- Enable jekyll.yml
+- Change ```run: bundle exec jekyll build --baseurl "/RunDocsTemplate"``` to new repo url
 
 Site should deploy
 
