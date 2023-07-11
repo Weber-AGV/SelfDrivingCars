@@ -1,6 +1,6 @@
 # RUN Docs Template
 
-##Deploy Site
+## Deploy Site
 - Github Settings
 - Pages
 - Enable Github Actions
