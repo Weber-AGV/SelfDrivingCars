@@ -4,7 +4,7 @@ sort: 1
 
 # Waymo
 
-## Header 2
+## Sense, Solve, and Go
 
 [![Waymo](https://img.youtube.com/vi/hA_-MkU0Nfw/0.jpg)](https://www.youtube.com/watch?v=hA_-MkU0Nfw&t=1s)
 
