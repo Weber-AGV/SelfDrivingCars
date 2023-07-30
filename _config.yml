@@ -1,8 +1,8 @@
-title: Run Docs Template
+title: Self Driving Cars
 lang: en
-description: RunDocsTemplate
-repository: scotthadzik/RunDocsTemplate
-baseurl: /RunDocsTemplate
+description: SelfDrivingCars
+repository: Weber-AGV/SelfDrivingCars
+baseurl: /SelfDrivingCars
 
 remote_theme: rundocs/jekyll-rtd-theme
 
